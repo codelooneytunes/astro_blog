@@ -1,15 +1,6 @@
 ---
-
-import { getCollection, type CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
-// import FormattedDate from "../../components/FormattedDate.astro";
-
-
-
-const { post, tags } = Astro.props;
-console.log(post.data.tags)
-
-
+const { post } = Astro.props;
 ---
 
 
@@ -23,7 +14,7 @@ console.log(post.data.tags)
     
       {
         post.data.tags.map((tag: [string]) => (
-        <a href={`/tag/${tag}/`} class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{tag}</a>
+        <a href={`/tags/${tag}/`} class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{tag}</a>
         ))
       }
     

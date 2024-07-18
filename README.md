@@ -35,3 +35,9 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 
+### docker build and push
+
+docker login gitregistry.lab.banditspace.com:5005
+docker build -t git.lab.banditspace.com:5050/sam/homelab_docs_blog .
+
+docker push git.lab.banditspace.com:5050/sam/homelab_docs_blog:latest

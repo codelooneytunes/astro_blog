@@ -1,7 +1,6 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection, type CollectionEntry } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
 import BaseLayout from "../../layouts/BaseLayout..astro";
 import BlogCard from "../../components/BlogCard.astro";
 type Props = CollectionEntry<"blog">;
@@ -13,24 +12,12 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<BaseLayout title=Blogs description={SITE_DESCRIPTION}>
   <section class="">
     <div class="px-4 max-w-7xl grid gap-4 grid-col-2 sm:grid-cols-2 lg:grid-col-3 lg:px-2 xl:px-0">
       {
         posts.map((post: Props) => (
 		<BlogCard post={post} tags={tags}></BlogCard>
-        //   <div class="p-4 border border-green-600/80 rounded-lg shadow-lg">
-        //     <a href={`/blog/${post.slug}/`}>
-        //       {/* <img width={720} height={360} src={post.data.heroImage} alt="" /> */}
-        //       <h4 class=" sm:text-lg">{post.data.title}</h4>
-		// 	  <p class="">
-        //         {post.data.description}
-        //       </p>
-        //       <p class="">
-        //         <FormattedDate date={post.data.pubDate} />
-        //       </p>
-        //     </a>
-        //   </div>
         ))
       }
     </div>
